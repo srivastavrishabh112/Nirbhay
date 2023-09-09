@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Complaint</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:#c6ccd5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0a0909;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Report Drug and Weapon Activities</h1>
+        <form>
+            <label for="complaint-type">Complaint Type:</label>
+            <select id="complaint-type" name="complaint-type" required>
+                <option value="drug">Drug Activity</option>
+                <option value="weapon">Weapon Activity</option>
+            </select>
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <!-- Multiple File Input -->
+                <label for="files">Any proof(Pic,Audio,video)</label>
+                <input type="file" name="files[]" id="files" multiple>
+                <br>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Details" required></textarea>
+            <button id="butombtn" type="submit" >Submit</button>
+            <script>
+                
+                document.getElementById("butombtn").addEventListener("click", function() {
+                    window.location.href = "thankyou.html"; // Replace with the path to your target HTML page
+                });
+            </script>
+            
+       
+        </form>
+    </div>
+    
+</body>
+</html>
